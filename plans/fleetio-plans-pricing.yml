@@ -1,0 +1,116 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Fleetio
+providerId: fleetio
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Fleet Management
+- Vehicles
+- Maintenance
+- SaaS
+- Plans
+description: >-
+  Fleetio is sold as a per-vehicle (per-asset) SaaS subscription across three
+  editions - Essential, Professional, and Premium - with a 5-vehicle minimum.
+  Pricing varies by plan, fleet-size band, contract term, and payment term.
+  The Developer API is included with all plans; access to specific records via
+  the API follows the same edition and per-user permission model as the web
+  application. Prices below reflect the published 5-asset annual bands and may
+  differ for larger fleets or monthly billing.
+notes: >-
+  Per-vehicle rates and feature inclusion vary by fleet-size band and contract;
+  verify current pricing on the Fleetio pricing page during reconciliation.
+sources:
+- https://www.fleetio.com/pricing
+- https://www.fleetio.com/pricing/plan-comparison
+- https://developer.fleetio.com/docs/overview/quick-start
+plans:
+- id: fleetio-essential
+  name: Essential
+  type: subscription
+  description: >-
+    Core fleet management - vehicles, contacts, fuel tracking, service history,
+    inspections, issues, and mobile app - billed per vehicle with a 5-vehicle
+    minimum.
+  entries:
+  - label: Essential per vehicle (annual)
+    name: essential_vehicle_annual
+    type: flat
+    metric: vehicles
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $4 per vehicle / month billed annually
+    userMultiplied: false
+  - label: Essential per vehicle (monthly)
+    name: essential_vehicle_monthly
+    type: flat
+    metric: vehicles
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $5 per vehicle / month billed monthly
+    userMultiplied: false
+  elements:
+  - name: Vehicles
+  - name: Contacts
+  - name: Fuel Entries
+  - name: Service Entries
+  - name: Inspections
+  - name: Issues
+  - name: Developer API
+  - name: Webhooks
+- id: fleetio-professional
+  name: Professional
+  type: subscription
+  description: >-
+    Adds work orders, service reminders, parts and inventory, and additional
+    workflow and reporting capabilities on top of Essential.
+  entries:
+  - label: Professional per vehicle (annual)
+    name: professional_vehicle_annual
+    type: flat
+    metric: vehicles
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $7 per vehicle / month billed annually
+    userMultiplied: false
+  elements:
+  - name: Work Orders
+  - name: Service Reminders
+  - name: Parts & Inventory
+  - name: Developer API
+  - name: Webhooks
+- id: fleetio-premium
+  name: Premium
+  type: subscription
+  description: >-
+    Most comprehensive edition - adds purchase orders, enhanced service tasks,
+    tire management, and advanced controls on top of Professional.
+  entries:
+  - label: Premium per vehicle (annual)
+    name: premium_vehicle_annual
+    type: flat
+    metric: vehicles
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $10 per vehicle / month billed annually
+    userMultiplied: false
+  elements:
+  - name: Purchase Orders
+  - name: Enhanced Service Tasks
+  - name: Tire Management
+  - name: Developer API
+  - name: Webhooks
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

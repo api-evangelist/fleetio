@@ -1,0 +1,87 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Fleetio
+providerId: fleetio
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Fleet Management
+- Vehicles
+- Maintenance
+- SaaS
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Fleetio spend. Fleetio bills as a per-vehicle (per-asset) SaaS
+  subscription across Essential, Professional, and Premium editions with a
+  5-vehicle minimum, billed monthly or annually. Cost is driven primarily by
+  the number of active (non-archived) vehicles and the chosen edition; the
+  Developer API and unlimited users are included rather than separately metered.
+notes: >-
+  Per-vehicle rates vary by fleet-size band and contract term; verify against
+  the Fleetio pricing page during reconciliation.
+sources:
+- https://www.fleetio.com/pricing
+- https://www.fleetio.com/pricing/plan-comparison
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Fleetio
+serviceCategory: Management and Governance
+billingModel:
+  pricingCategory: Subscription
+  billingFrequency: Monthly or Annual
+  billingCurrency: USD
+  chargeCategories:
+  - Usage
+  - Purchase
+  - Adjustment
+focusColumns:
+  ServiceName: Fleetio
+  ServiceCategory: Management and Governance
+  ProviderName: Fleetio
+  PublisherName: Fleetio
+  InvoiceIssuerName: Fleetio
+  BillingCurrency: USD
+  ChargeCategory: Usage
+  PricingCategory: Subscription
+meters:
+- name: active_vehicles
+  description: Active (non-archived) vehicles or assets under management, the primary billable unit.
+  unit: vehicles
+  aggregation: max
+  dimensions:
+  - account
+  - plan
+  - group
+- name: plan_edition
+  description: Subscription edition (Essential, Professional, Premium) determining per-vehicle rate and feature access.
+  unit: edition
+  aggregation: latest
+  dimensions:
+  - account
+- name: contract_term
+  description: Contract and payment term (annual vs. monthly) affecting the per-vehicle rate.
+  unit: term
+  aggregation: latest
+  dimensions:
+  - account
+principles:
+- name: Visibility
+  description: Track active vs. archived vehicle counts; reconcile billed assets against vehicles actually in service.
+- name: Allocation
+  description: Use Fleetio groups to map vehicles to internal cost centers, sites, or business units.
+- name: Optimization
+  description: Archive retired or sold vehicles promptly to stop billing; pick the lowest edition that meets workflow needs; commit annually for the lower per-vehicle rate.
+- name: Accountability
+  description: Assign group owners and review the active-vehicle count and edition against budget before each renewal.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

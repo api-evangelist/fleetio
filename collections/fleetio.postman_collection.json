@@ -1,0 +1,475 @@
+{
+  "item": [
+    {
+      "name": "Vehicles",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List vehicles",
+          "request": {
+            "name": "List vehicles",
+            "url": { "path": ["api", "v1", "vehicles"], "host": ["{{baseUrl}}"], "query": [{ "key": "per_page", "value": "50", "disabled": true }], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a vehicle",
+          "request": {
+            "name": "Create a vehicle",
+            "url": { "path": ["api", "v1", "vehicles"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vin\": \"<string>\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a vehicle",
+          "request": {
+            "name": "Get a vehicle",
+            "url": { "path": ["api", "v1", "vehicles", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Update a vehicle",
+          "request": {
+            "name": "Update a vehicle",
+            "url": { "path": ["api", "v1", "vehicles", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "PATCH",
+            "body": { "mode": "raw", "raw": "{}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a vehicle",
+          "request": {
+            "name": "Delete a vehicle",
+            "url": { "path": ["api", "v1", "vehicles", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }],
+            "method": "DELETE"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Contacts",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List contacts",
+          "request": {
+            "name": "List contacts",
+            "url": { "path": ["api", "v1", "contacts"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a contact",
+          "request": {
+            "name": "Create a contact",
+            "url": { "path": ["api", "v1", "contacts"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a contact",
+          "request": {
+            "name": "Get a contact",
+            "url": { "path": ["api", "v1", "contacts", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Update a contact",
+          "request": {
+            "name": "Update a contact",
+            "url": { "path": ["api", "v1", "contacts", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "PATCH",
+            "body": { "mode": "raw", "raw": "{}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Fuel Entries",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List fuel entries",
+          "request": {
+            "name": "List fuel entries",
+            "url": { "path": ["api", "v1", "fuel_entries"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a fuel entry",
+          "request": {
+            "name": "Create a fuel entry",
+            "url": { "path": ["api", "v1", "fuel_entries"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "body": { "mode": "raw", "raw": "{\n  \"vehicle_id\": \"<integer>\",\n  \"date\": \"<string>\",\n  \"us_gallons\": \"<number>\",\n  \"cost\": \"<number>\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a fuel entry",
+          "request": {
+            "name": "Get a fuel entry",
+            "url": { "path": ["api", "v1", "fuel_entries", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Update a fuel entry",
+          "request": {
+            "name": "Update a fuel entry",
+            "url": { "path": ["api", "v1", "fuel_entries", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "PATCH",
+            "body": { "mode": "raw", "raw": "{}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Service Entries",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List service entries",
+          "request": {
+            "name": "List service entries",
+            "url": { "path": ["api", "v1", "service_entries"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a service entry",
+          "request": {
+            "name": "Create a service entry",
+            "url": { "path": ["api", "v1", "service_entries"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "body": { "mode": "raw", "raw": "{\n  \"vehicle_id\": \"<integer>\",\n  \"completed_at\": \"<string>\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a service entry",
+          "request": {
+            "name": "Get a service entry",
+            "url": { "path": ["api", "v1", "service_entries", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Service Reminders",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List service reminders",
+          "request": {
+            "name": "List service reminders",
+            "url": { "path": ["api", "v1", "service_reminders"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Get a service reminder",
+          "request": {
+            "name": "Get a service reminder",
+            "url": { "path": ["api", "v1", "service_reminders", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Work Orders",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List work orders",
+          "request": {
+            "name": "List work orders",
+            "url": { "path": ["api", "v1", "work_orders"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a work order",
+          "request": {
+            "name": "Create a work order",
+            "url": { "path": ["api", "v1", "work_orders"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "body": { "mode": "raw", "raw": "{\n  \"vehicle_id\": \"<integer>\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a work order",
+          "request": {
+            "name": "Get a work order",
+            "url": { "path": ["api", "v1", "work_orders", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Update a work order",
+          "request": {
+            "name": "Update a work order",
+            "url": { "path": ["api", "v1", "work_orders", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "PATCH",
+            "body": { "mode": "raw", "raw": "{}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Parts",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List parts",
+          "request": {
+            "name": "List parts",
+            "url": { "path": ["api", "v1", "parts"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a part",
+          "request": {
+            "name": "Create a part",
+            "url": { "path": ["api", "v1", "parts"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "body": { "mode": "raw", "raw": "{\n  \"number\": \"<string>\",\n  \"description\": \"<string>\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a part",
+          "request": {
+            "name": "Get a part",
+            "url": { "path": ["api", "v1", "parts", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Update a part",
+          "request": {
+            "name": "Update a part",
+            "url": { "path": ["api", "v1", "parts", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "PATCH",
+            "body": { "mode": "raw", "raw": "{}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Inventory Journal Entries",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List inventory journal entries",
+          "request": {
+            "name": "List inventory journal entries",
+            "url": { "path": ["api", "v1", "inventory_journal_entries"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Inspections",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List inspection forms",
+          "request": {
+            "name": "List inspection forms",
+            "url": { "path": ["api", "v1", "inspection_forms"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "List submitted inspection forms",
+          "request": {
+            "name": "List submitted inspection forms",
+            "url": { "path": ["api", "v1", "submitted_inspection_forms"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Issues",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List issues",
+          "request": {
+            "name": "List issues",
+            "url": { "path": ["api", "v1", "issues"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Create an issue",
+          "request": {
+            "name": "Create an issue",
+            "url": { "path": ["api", "v1", "issues"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "body": { "mode": "raw", "raw": "{\n  \"vehicle_id\": \"<integer>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Get an issue",
+          "request": {
+            "name": "Get an issue",
+            "url": { "path": ["api", "v1", "issues", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Update an issue",
+          "request": {
+            "name": "Update an issue",
+            "url": { "path": ["api", "v1", "issues", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "PATCH",
+            "body": { "mode": "raw", "raw": "{}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Webhooks",
+      "description": { "content": "", "type": "text/plain" },
+      "item": [
+        {
+          "name": "List webhooks",
+          "request": {
+            "name": "List webhooks",
+            "url": { "path": ["api", "v1", "webhooks"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Create a webhook",
+          "request": {
+            "name": "Create a webhook",
+            "url": { "path": ["api", "v1", "webhooks"], "host": ["{{baseUrl}}"], "query": [], "variable": [] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Content-Type", "value": "application/json" }],
+            "method": "POST",
+            "body": { "mode": "raw", "raw": "{\n  \"url\": \"<string>\",\n  \"event\": \"<string>\"\n}", "options": { "raw": { "language": "json" } } }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a webhook",
+          "request": {
+            "name": "Get a webhook",
+            "url": { "path": ["api", "v1", "webhooks", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }, { "key": "Accept", "value": "application/json" }],
+            "method": "GET"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete a webhook",
+          "request": {
+            "name": "Delete a webhook",
+            "url": { "path": ["api", "v1", "webhooks", ":id"], "host": ["{{baseUrl}}"], "query": [], "variable": [{ "key": "id", "value": "<integer>" }] },
+            "header": [{ "key": "Account-Token", "value": "{{accountToken}}" }],
+            "method": "DELETE"
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [],
+  "variable": [
+    { "type": "string", "value": "https://secure.fleetio.com", "key": "baseUrl" }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      { "key": "key", "value": "Authorization" },
+      { "key": "value", "value": "Token {{apiKey}}" },
+      { "key": "in", "value": "header" }
+    ]
+  },
+  "info": {
+    "_postman_id": "f1ee7100-fa11-4ee7-bf1e-0cafe7100100",
+    "name": "Fleetio Developer API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "JSON REST API for the Fleetio fleet management platform. Authenticate with an Authorization header of 'Token YOUR_API_KEY' plus an Account-Token header.\n\nDocs: https://developer.fleetio.com/",
+      "type": "text/plain"
+    }
+  }
+}

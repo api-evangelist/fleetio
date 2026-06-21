@@ -1,0 +1,74 @@
+aid: fleetio
+name: Fleetio
+review:
+  question: Does Fleetio expose a documented public WebSocket API?
+  answer: false
+  date: '2026-06-21'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. Fleetio's event surface is delivered via
+    HTTP webhooks (server-to-server POST callbacks), not WebSocket or SSE
+    streams. Webhooks are modeled as REST resources in the OpenAPI document
+    (POST/GET/DELETE /v1/webhooks). No streaming transport is documented.
+findings:
+  summary: |
+    Fleetio does not publish a documented public WebSocket API. The Fleetio
+    Developer API is a JSON REST API served over HTTPS at
+    https://secure.fleetio.com/api, authenticated with an Authorization
+    "Token" header plus an Account-Token header. Real-time event delivery is
+    handled through HTTP webhooks - registered HTTPS callback URLs that
+    receive POST payloads when records change - rather than a bidirectional
+    WebSocket (ws:// or wss://) connection. No realtime streaming or SSE
+    surface is documented.
+  transports:
+    - protocol: REST
+      scheme: https
+      baseURL: https://secure.fleetio.com/api
+      documented: true
+    - protocol: Webhooks
+      scheme: https
+      note: Outbound HTTP POST callbacks to a customer-registered URL on record events. Not WebSocket.
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in the Fleetio Developer Portal as of the review date.
+  endpointsConfirmedRest:
+    - GET    https://secure.fleetio.com/api/v1/vehicles
+    - POST   https://secure.fleetio.com/api/v1/vehicles
+    - GET    https://secure.fleetio.com/api/v1/vehicles/{id}
+    - PATCH  https://secure.fleetio.com/api/v1/vehicles/{id}
+    - GET    https://secure.fleetio.com/api/v1/contacts
+    - GET    https://secure.fleetio.com/api/v1/fuel_entries
+    - GET    https://secure.fleetio.com/api/v1/service_entries
+    - GET    https://secure.fleetio.com/api/v1/service_reminders
+    - GET    https://secure.fleetio.com/api/v1/work_orders
+    - GET    https://secure.fleetio.com/api/v1/parts
+    - GET    https://secure.fleetio.com/api/v1/inventory_journal_entries
+    - GET    https://secure.fleetio.com/api/v1/inspection_forms
+    - GET    https://secure.fleetio.com/api/v1/submitted_inspection_forms
+    - GET    https://secure.fleetio.com/api/v1/issues
+    - GET    https://secure.fleetio.com/api/v1/webhooks
+    - POST   https://secure.fleetio.com/api/v1/webhooks
+sources:
+  - url: https://developer.fleetio.com/docs/overview/quick-start
+    type: Documentation
+    note: Quick Start documents REST base URL and the Authorization "Token" + Account-Token header scheme.
+  - url: https://developer.fleetio.com/docs/api/fleetio-developer-api
+    type: APIReference
+    note: All documented resources are HTTPS REST endpoints under /api/v1.
+  - url: https://developer.fleetio.com/docs/api/webhooks
+    type: Documentation
+    note: Event delivery uses HTTP webhooks (registered callback URLs), not WebSocket.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket or SSE protocol surface exists. Event delivery is HTTP
+    webhooks, which are modeled as REST resources in the OpenAPI document. No
+    AsyncAPI artifact was created because there is no streaming transport to
+    represent.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

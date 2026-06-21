@@ -1,0 +1,180 @@
+aid: fleetio
+url: https://raw.githubusercontent.com/api-evangelist/fleetio/refs/heads/main/apis.yml
+name: Fleetio
+kind: company
+description: Fleetio is a cloud-based fleet management software platform that helps
+  organizations track and manage vehicles, equipment, maintenance, fuel, parts, and
+  inspections. The Fleetio Developer API is a JSON REST API at https://secure.fleetio.com/api
+  for managing vehicles, contacts, fuel entries, service entries, work orders, parts,
+  inspections, and issues, with webhooks for event notifications.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Fleet Management
+- Vehicles
+- Maintenance
+- Telematics
+- SaaS
+created: '2026-06-21'
+modified: '2026-06-21'
+specificationVersion: '0.19'
+apis:
+- aid: fleetio:vehicles
+  name: Fleetio Vehicles API
+  tags:
+  - Vehicles
+  - Assets
+  - Equipment
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.fleetio.com/docs/api/vehicles
+  baseURL: https://secure.fleetio.com/api/v1
+  properties:
+  - url: https://developer.fleetio.com/docs/api/vehicles
+    type: Documentation
+  - url: https://developer.fleetio.com/docs/api/fleetio-developer-api
+    type: APIReference
+  - url: openapi/fleetio-openapi.yml
+    type: OpenAPI
+  description: Create, read, update, and archive fleet vehicles and assets, including
+    make, model, year, VIN, license plate, group assignment, status, and meter data.
+- aid: fleetio:contacts
+  name: Fleetio Contacts API
+  tags:
+  - Contacts
+  - Operators
+  - Technicians
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.fleetio.com/docs/api/contacts
+  baseURL: https://secure.fleetio.com/api/v1
+  properties:
+  - url: https://developer.fleetio.com/docs/api/contacts
+    type: Documentation
+  - url: openapi/fleetio-openapi.yml
+    type: OpenAPI
+  description: Manage people associated with the fleet - operators, technicians, and
+    employees - with names, contact details, permissions, and group membership.
+- aid: fleetio:fuel-entries
+  name: Fleetio Fuel Entries API
+  tags:
+  - Fuel
+  - Fuel Entries
+  - Costs
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.fleetio.com/docs/api/fuel-entries
+  baseURL: https://secure.fleetio.com/api/v1
+  properties:
+  - url: https://developer.fleetio.com/docs/api/fuel-entries
+    type: Documentation
+  - url: openapi/fleetio-openapi.yml
+    type: OpenAPI
+  description: Record and retrieve fuel purchases per vehicle, including volume, cost,
+    fuel economy, meter readings, and vendor, for fuel and cost tracking.
+- aid: fleetio:service-work-orders
+  name: Fleetio Service & Work Orders API
+  tags:
+  - Service Entries
+  - Work Orders
+  - Service Reminders
+  - Maintenance
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.fleetio.com/docs/api/work-orders
+  baseURL: https://secure.fleetio.com/api/v1
+  properties:
+  - url: https://developer.fleetio.com/docs/api/service-entries
+    type: Documentation
+  - url: https://developer.fleetio.com/docs/api/work-orders
+    type: Documentation
+  - url: https://developer.fleetio.com/docs/api/service-reminders
+    type: Documentation
+  - url: openapi/fleetio-openapi.yml
+    type: OpenAPI
+  description: Manage maintenance - service entries (completed work and costs), work
+    orders (planned and in-progress repairs with line items), and service reminders
+    driven by time or meter intervals.
+- aid: fleetio:parts-inventory
+  name: Fleetio Parts & Inventory API
+  tags:
+  - Parts
+  - Inventory
+  - Inventory Journal Entries
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.fleetio.com/docs/api/parts
+  baseURL: https://secure.fleetio.com/api/v1
+  properties:
+  - url: https://developer.fleetio.com/docs/api/parts
+    type: Documentation
+  - url: https://developer.fleetio.com/docs/api/inventory-journal-entries
+    type: Documentation
+  - url: openapi/fleetio-openapi.yml
+    type: OpenAPI
+  description: Manage the parts catalog and stock levels across locations, with part
+    details, costs, and inventory journal entries tracking quantity movements.
+- aid: fleetio:inspections
+  name: Fleetio Inspections API
+  tags:
+  - Inspections
+  - Inspection Forms
+  - DVIR
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.fleetio.com/docs/api/inspection-forms
+  baseURL: https://secure.fleetio.com/api/v1
+  properties:
+  - url: https://developer.fleetio.com/docs/api/inspection-forms
+    type: Documentation
+  - url: https://developer.fleetio.com/docs/api/submitted-inspection-forms
+    type: Documentation
+  - url: openapi/fleetio-openapi.yml
+    type: OpenAPI
+  description: Access inspection forms and submitted inspection results (including
+    DVIR-style checks), with item responses, pass/fail status, and any failures that
+    generate issues.
+- aid: fleetio:issues
+  name: Fleetio Issues API
+  tags:
+  - Issues
+  - Defects
+  - Faults
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.fleetio.com/docs/api/issues
+  baseURL: https://secure.fleetio.com/api/v1
+  properties:
+  - url: https://developer.fleetio.com/docs/api/issues
+    type: Documentation
+  - url: openapi/fleetio-openapi.yml
+    type: OpenAPI
+  description: Track vehicle issues and defects reported by operators or surfaced by
+    inspections, with status, assignment, and resolution into work orders or service
+    entries.
+- aid: fleetio:webhooks
+  name: Fleetio Webhooks API
+  tags:
+  - Webhooks
+  - Events
+  - Notifications
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://developer.fleetio.com/docs/api/webhooks
+  baseURL: https://secure.fleetio.com/api/v1
+  properties:
+  - url: https://developer.fleetio.com/docs/api/webhooks
+    type: Documentation
+  - url: openapi/fleetio-openapi.yml
+    type: OpenAPI
+  description: Register webhook endpoints to receive event notifications when records
+    such as vehicles, service entries, work orders, and issues are created or updated.
+common:
+- type: GitHubOrganization
+  url: https://github.com/fleetio
+- type: LinkedIn
+  url: https://www.linkedin.com/company/fleetio
+- type: Website
+  url: https://www.fleetio.com
+- type: Documentation
+  url: https://developer.fleetio.com/docs/overview/quick-start
+- type: Plans
+  url: plans/fleetio-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/fleetio-rate-limits.yml
+- type: FinOps
+  url: finops/fleetio-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

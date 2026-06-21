@@ -1,0 +1,259 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fleetio Developer API",
+    "version": "2025-05-05"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "apikey": [
+        { "key": "key", "value": "Authorization" },
+        { "key": "value", "value": "Token {{apiKey}}" },
+        { "key": "in", "value": "header" }
+      ]
+    }
+  },
+  "items": [
+    {
+      "info": { "name": "Vehicles", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List vehicles", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/vehicles" },
+          "docs": "Returns a paginated array of all vehicles in the account."
+        },
+        {
+          "info": { "name": "Create a vehicle", "type": "http" },
+          "http": { "method": "POST", "url": "https://secure.fleetio.com/api/v1/vehicles", "body": { "type": "json", "data": "{}" } },
+          "docs": "Creates a new vehicle."
+        },
+        {
+          "info": { "name": "Get a vehicle", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/vehicles/{id}" },
+          "docs": "Returns the vehicle corresponding to the id."
+        },
+        {
+          "info": { "name": "Update a vehicle", "type": "http" },
+          "http": { "method": "PATCH", "url": "https://secure.fleetio.com/api/v1/vehicles/{id}", "body": { "type": "json", "data": "{}" } },
+          "docs": "Updates the vehicle corresponding to the id."
+        },
+        {
+          "info": { "name": "Delete a vehicle", "type": "http" },
+          "http": { "method": "DELETE", "url": "https://secure.fleetio.com/api/v1/vehicles/{id}" },
+          "docs": "Deletes the vehicle corresponding to the id."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Contacts", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List contacts", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/contacts" },
+          "docs": "Returns a paginated array of all contacts."
+        },
+        {
+          "info": { "name": "Create a contact", "type": "http" },
+          "http": { "method": "POST", "url": "https://secure.fleetio.com/api/v1/contacts", "body": { "type": "json", "data": "{}" } },
+          "docs": "Creates a new contact."
+        },
+        {
+          "info": { "name": "Get a contact", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/contacts/{id}" },
+          "docs": "Returns the contact corresponding to the id."
+        },
+        {
+          "info": { "name": "Update a contact", "type": "http" },
+          "http": { "method": "PATCH", "url": "https://secure.fleetio.com/api/v1/contacts/{id}", "body": { "type": "json", "data": "{}" } },
+          "docs": "Updates the contact corresponding to the id."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Fuel Entries", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List fuel entries", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/fuel_entries" },
+          "docs": "Returns a paginated array of all fuel entries."
+        },
+        {
+          "info": { "name": "Create a fuel entry", "type": "http" },
+          "http": { "method": "POST", "url": "https://secure.fleetio.com/api/v1/fuel_entries", "body": { "type": "json", "data": "{}" } },
+          "docs": "Creates a new fuel entry."
+        },
+        {
+          "info": { "name": "Get a fuel entry", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/fuel_entries/{id}" },
+          "docs": "Returns the fuel entry corresponding to the id."
+        },
+        {
+          "info": { "name": "Update a fuel entry", "type": "http" },
+          "http": { "method": "PATCH", "url": "https://secure.fleetio.com/api/v1/fuel_entries/{id}", "body": { "type": "json", "data": "{}" } },
+          "docs": "Updates the fuel entry corresponding to the id."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Service Entries", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List service entries", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/service_entries" },
+          "docs": "Returns a paginated array of all service entries."
+        },
+        {
+          "info": { "name": "Create a service entry", "type": "http" },
+          "http": { "method": "POST", "url": "https://secure.fleetio.com/api/v1/service_entries", "body": { "type": "json", "data": "{}" } },
+          "docs": "Creates a new service entry."
+        },
+        {
+          "info": { "name": "Get a service entry", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/service_entries/{id}" },
+          "docs": "Returns the service entry corresponding to the id."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Service Reminders", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List service reminders", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/service_reminders" },
+          "docs": "Returns a paginated array of all service reminders."
+        },
+        {
+          "info": { "name": "Get a service reminder", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/service_reminders/{id}" },
+          "docs": "Returns the service reminder corresponding to the id."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Work Orders", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List work orders", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/work_orders" },
+          "docs": "Returns a paginated array of all work orders."
+        },
+        {
+          "info": { "name": "Create a work order", "type": "http" },
+          "http": { "method": "POST", "url": "https://secure.fleetio.com/api/v1/work_orders", "body": { "type": "json", "data": "{}" } },
+          "docs": "Creates a new work order."
+        },
+        {
+          "info": { "name": "Get a work order", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/work_orders/{id}" },
+          "docs": "Returns the work order corresponding to the id."
+        },
+        {
+          "info": { "name": "Update a work order", "type": "http" },
+          "http": { "method": "PATCH", "url": "https://secure.fleetio.com/api/v1/work_orders/{id}", "body": { "type": "json", "data": "{}" } },
+          "docs": "Updates the work order corresponding to the id."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Parts", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List parts", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/parts" },
+          "docs": "Returns a paginated array of all parts."
+        },
+        {
+          "info": { "name": "Create a part", "type": "http" },
+          "http": { "method": "POST", "url": "https://secure.fleetio.com/api/v1/parts", "body": { "type": "json", "data": "{}" } },
+          "docs": "Creates a new part."
+        },
+        {
+          "info": { "name": "Get a part", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/parts/{id}" },
+          "docs": "Returns the part corresponding to the id."
+        },
+        {
+          "info": { "name": "Update a part", "type": "http" },
+          "http": { "method": "PATCH", "url": "https://secure.fleetio.com/api/v1/parts/{id}", "body": { "type": "json", "data": "{}" } },
+          "docs": "Updates the part corresponding to the id."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Inventory Journal Entries", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List inventory journal entries", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/inventory_journal_entries" },
+          "docs": "Returns a paginated array of all inventory journal entries."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Inspections", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List inspection forms", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/inspection_forms" },
+          "docs": "Returns a paginated array of all inspection forms."
+        },
+        {
+          "info": { "name": "List submitted inspection forms", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/submitted_inspection_forms" },
+          "docs": "Returns a paginated array of all submitted inspection forms."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Issues", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List issues", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/issues" },
+          "docs": "Returns a paginated array of all issues."
+        },
+        {
+          "info": { "name": "Create an issue", "type": "http" },
+          "http": { "method": "POST", "url": "https://secure.fleetio.com/api/v1/issues", "body": { "type": "json", "data": "{}" } },
+          "docs": "Creates a new issue."
+        },
+        {
+          "info": { "name": "Get an issue", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/issues/{id}" },
+          "docs": "Returns the issue corresponding to the id."
+        },
+        {
+          "info": { "name": "Update an issue", "type": "http" },
+          "http": { "method": "PATCH", "url": "https://secure.fleetio.com/api/v1/issues/{id}", "body": { "type": "json", "data": "{}" } },
+          "docs": "Updates the issue corresponding to the id."
+        }
+      ]
+    },
+    {
+      "info": { "name": "Webhooks", "type": "folder" },
+      "items": [
+        {
+          "info": { "name": "List webhooks", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/webhooks" },
+          "docs": "Returns all registered webhooks."
+        },
+        {
+          "info": { "name": "Create a webhook", "type": "http" },
+          "http": { "method": "POST", "url": "https://secure.fleetio.com/api/v1/webhooks", "body": { "type": "json", "data": "{}" } },
+          "docs": "Registers a new webhook endpoint."
+        },
+        {
+          "info": { "name": "Get a webhook", "type": "http" },
+          "http": { "method": "GET", "url": "https://secure.fleetio.com/api/v1/webhooks/{id}" },
+          "docs": "Returns the webhook corresponding to the id."
+        },
+        {
+          "info": { "name": "Delete a webhook", "type": "http" },
+          "http": { "method": "DELETE", "url": "https://secure.fleetio.com/api/v1/webhooks/{id}" },
+          "docs": "Deletes the webhook corresponding to the id."
+        }
+      ]
+    }
+  ]
+}

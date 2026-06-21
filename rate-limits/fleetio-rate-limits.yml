@@ -1,0 +1,53 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Fleetio
+providerId: fleetio
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- Fleet Management
+- Vehicles
+- Maintenance
+- SaaS
+- Rate Limiting
+- Quotas
+- Throttling
+description: >-
+  The Fleetio Developer API enforces per-account request rate limits to protect
+  platform stability. Clients exceeding the allowed request rate receive an HTTP
+  429 response and should honor the Retry-After header and back off. Specific
+  request-per-minute values are not published in a fixed public figure and are
+  not reconciled in this artifact; verify current limits against Fleetio
+  developer documentation and observed response headers.
+notes: >-
+  Confirm exact request-per-minute and burst limits, plus the names of any
+  rate-limit response headers, against Fleetio developer documentation during
+  reconciliation.
+sources:
+- https://developer.fleetio.com/docs/overview/quick-start
+- https://developer.fleetio.com/docs/api/fleetio-developer-api
+responseCodes:
+  throttled: 429
+limits:
+- name: Requests Per Minute
+  scope: account
+  metric: requests
+  limit: see provider documentation
+  notes: Per-account request rate; exact value not published as a fixed figure.
+- name: Pagination Page Size
+  scope: request
+  metric: records
+  limit: 100
+  notes: Maximum records returned per page on list endpoints via per_page.
+policies:
+- name: Throttling
+  description: Exceeding the request rate returns HTTP 429 Too Many Requests.
+- name: Backoff Strategy
+  description: Clients should honor Retry-After and implement exponential backoff with jitter on 429 responses.
+- name: Pagination
+  description: Use cursor-based pagination (start_cursor / per_page) to page large result sets efficiently instead of large single requests.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
