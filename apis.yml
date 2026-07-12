@@ -161,6 +161,12 @@ apis:
   description: Register webhook endpoints to receive event notifications when records
     such as vehicles, service entries, work orders, and issues are created or updated.
 common:
+- type: TrustCenter
+  url: security/fleetio-trust-center.yml
+- type: DomainSecurity
+  url: security/fleetio-domain-security.yml
+- type: Authentication
+  url: authentication/fleetio-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/fleetio
 - type: LinkedIn
