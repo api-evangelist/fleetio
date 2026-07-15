@@ -161,6 +161,8 @@ apis:
   description: Register webhook endpoints to receive event notifications when records
     such as vehicles, service entries, work orders, and issues are created or updated.
 common:
+- type: AgenticAccess
+  url: agentic-access/fleetio-agentic-access.yml
 - type: TrustCenter
   url: security/fleetio-trust-center.yml
 - type: DomainSecurity
