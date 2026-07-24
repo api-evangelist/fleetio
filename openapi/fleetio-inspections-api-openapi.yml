@@ -1,0 +1,135 @@
+openapi: 3.0.1
+info:
+  title: Fleetio Developer Contacts Inspections API
+  description: JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.
+  termsOfService: https://www.fleetio.com/legal/terms
+  contact:
+    name: Fleetio Developer Support
+    url: https://developer.fleetio.com/
+  version: '2025-05-05'
+servers:
+- url: https://secure.fleetio.com/api
+  description: Fleetio production API
+security:
+- AuthorizationToken: []
+  AccountToken: []
+tags:
+- name: Inspections
+paths:
+  /v1/inspection_forms:
+    get:
+      operationId: listInspectionForms
+      tags:
+      - Inspections
+      summary: List inspection forms
+      parameters:
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/StartCursor'
+      responses:
+        '200':
+          description: A list of inspection forms.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/InspectionForm'
+  /v1/submitted_inspection_forms:
+    get:
+      operationId: listSubmittedInspectionForms
+      tags:
+      - Inspections
+      summary: List submitted inspection forms
+      parameters:
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/StartCursor'
+      responses:
+        '200':
+          description: A list of submitted inspection forms.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SubmittedInspectionForm'
+components:
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      required: false
+      description: Number of records to return per page.
+      schema:
+        type: integer
+        default: 50
+        maximum: 100
+    StartCursor:
+      name: start_cursor
+      in: query
+      required: false
+      description: Cursor for cursor-based pagination of list results.
+      schema:
+        type: string
+  schemas:
+    InspectionForm:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        title:
+          type: string
+        description:
+          type: string
+        archived_at:
+          type: string
+          format: date-time
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+    SubmittedInspectionForm:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        inspection_form_id:
+          type: integer
+          format: int64
+        vehicle_id:
+          type: integer
+          format: int64
+        submitted_at:
+          type: string
+          format: date-time
+        contact_id:
+          type: integer
+          format: int64
+          nullable: true
+        failed_items_count:
+          type: integer
+        passed:
+          type: boolean
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+  securitySchemes:
+    AuthorizationToken:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'API key associated with a Fleetio user, prefixed with the word "Token" (e.g. "Authorization: Token YOUR_API_KEY"). Generate keys at https://secure.fleetio.com/api_keys.'
+    AccountToken:
+      type: apiKey
+      in: header
+      name: Account-Token
+      description: Account token identifying the Fleetio account.

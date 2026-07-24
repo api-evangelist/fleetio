@@ -1,0 +1,154 @@
+openapi: 3.0.1
+info:
+  title: Fleetio Developer Contacts Parts API
+  description: JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.
+  termsOfService: https://www.fleetio.com/legal/terms
+  contact:
+    name: Fleetio Developer Support
+    url: https://developer.fleetio.com/
+  version: '2025-05-05'
+servers:
+- url: https://secure.fleetio.com/api
+  description: Fleetio production API
+security:
+- AuthorizationToken: []
+  AccountToken: []
+tags:
+- name: Parts
+paths:
+  /v1/parts:
+    get:
+      operationId: listParts
+      tags:
+      - Parts
+      summary: List parts
+      parameters:
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/StartCursor'
+      responses:
+        '200':
+          description: A list of parts.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Part'
+    post:
+      operationId: createPart
+      tags:
+      - Parts
+      summary: Create a part
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Part'
+      responses:
+        '201':
+          description: The created part.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Part'
+  /v1/parts/{id}:
+    parameters:
+    - $ref: '#/components/parameters/ResourceId'
+    get:
+      operationId: getPart
+      tags:
+      - Parts
+      summary: Get a part
+      responses:
+        '200':
+          description: The requested part.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Part'
+    patch:
+      operationId: updatePart
+      tags:
+      - Parts
+      summary: Update a part
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Part'
+      responses:
+        '200':
+          description: The updated part.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Part'
+components:
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      required: false
+      description: Number of records to return per page.
+      schema:
+        type: integer
+        default: 50
+        maximum: 100
+    StartCursor:
+      name: start_cursor
+      in: query
+      required: false
+      description: Cursor for cursor-based pagination of list results.
+      schema:
+        type: string
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: The unique identifier of the resource.
+      schema:
+        type: integer
+        format: int64
+  schemas:
+    Part:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        number:
+          type: string
+        description:
+          type: string
+        manufacturer_part_number:
+          type: string
+        upc:
+          type: string
+        unit_cost:
+          type: number
+        measurement_unit_name:
+          type: string
+        part_category_name:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+  securitySchemes:
+    AuthorizationToken:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'API key associated with a Fleetio user, prefixed with the word "Token" (e.g. "Authorization: Token YOUR_API_KEY"). Generate keys at https://secure.fleetio.com/api_keys.'
+    AccountToken:
+      type: apiKey
+      in: header
+      name: Account-Token
+      description: Account token identifying the Fleetio account.

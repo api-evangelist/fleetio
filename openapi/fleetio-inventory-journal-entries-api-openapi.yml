@@ -1,0 +1,95 @@
+openapi: 3.0.1
+info:
+  title: Fleetio Developer Contacts Inventory Journal Entries API
+  description: JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.
+  termsOfService: https://www.fleetio.com/legal/terms
+  contact:
+    name: Fleetio Developer Support
+    url: https://developer.fleetio.com/
+  version: '2025-05-05'
+servers:
+- url: https://secure.fleetio.com/api
+  description: Fleetio production API
+security:
+- AuthorizationToken: []
+  AccountToken: []
+tags:
+- name: Inventory Journal Entries
+paths:
+  /v1/inventory_journal_entries:
+    get:
+      operationId: listInventoryJournalEntries
+      tags:
+      - Inventory Journal Entries
+      summary: List inventory journal entries
+      parameters:
+      - $ref: '#/components/parameters/PerPage'
+      - $ref: '#/components/parameters/StartCursor'
+      responses:
+        '200':
+          description: A list of inventory journal entries.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/InventoryJournalEntry'
+components:
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      required: false
+      description: Number of records to return per page.
+      schema:
+        type: integer
+        default: 50
+        maximum: 100
+    StartCursor:
+      name: start_cursor
+      in: query
+      required: false
+      description: Cursor for cursor-based pagination of list results.
+      schema:
+        type: string
+  schemas:
+    InventoryJournalEntry:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        part_id:
+          type: integer
+          format: int64
+        part_location_id:
+          type: integer
+          format: int64
+          nullable: true
+        quantity:
+          type: number
+        unit_cost:
+          type: number
+        journal_type:
+          type: string
+        description:
+          type: string
+        performed_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+  securitySchemes:
+    AuthorizationToken:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: 'API key associated with a Fleetio user, prefixed with the word "Token" (e.g. "Authorization: Token YOUR_API_KEY"). Generate keys at https://secure.fleetio.com/api_keys.'
+    AccountToken:
+      type: apiKey
+      in: header
+      name: Account-Token
+      description: Account token identifying the Fleetio account.
