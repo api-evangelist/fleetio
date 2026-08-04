@@ -1,0 +1,34 @@
+{
+  "provider": "fleetio",
+  "sources": [
+    "fleetio-contacts-api-openapi.yml",
+    "fleetio-fuel-entries-api-openapi.yml",
+    "fleetio-inspections-api-openapi.yml",
+    "fleetio-inventory-journal-entries-api-openapi.yml",
+    "fleetio-issues-api-openapi.yml",
+    "fleetio-parts-api-openapi.yml",
+    "fleetio-service-entries-api-openapi.yml",
+    "fleetio-service-reminders-api-openapi.yml",
+    "fleetio-vehicles-api-openapi.yml",
+    "fleetio-webhooks-api-openapi.yml",
+    "fleetio-work-orders-api-openapi.yml"
+  ],
+  "outputs": [
+    "fleetio-contacts-api-openapi.yml",
+    "fleetio-fuel-entries-api-openapi.yml",
+    "fleetio-inspections-api-openapi.yml",
+    "fleetio-inventory-journal-entries-api-openapi.yml",
+    "fleetio-issues-api-openapi.yml",
+    "fleetio-parts-api-openapi.yml",
+    "fleetio-service-entries-api-openapi.yml",
+    "fleetio-service-reminders-api-openapi.yml",
+    "fleetio-vehicles-api-openapi.yml",
+    "fleetio-webhooks-api-openapi.yml",
+    "fleetio-work-orders-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
