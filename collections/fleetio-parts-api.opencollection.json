@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fleetio Developer Contacts Parts API",
+    "version": "2025-05-05"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Parts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List parts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://secure.fleetio.com/api/v1/parts",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to return per page."
+              },
+              {
+                "name": "start_cursor",
+                "value": "",
+                "type": "query",
+                "description": "Cursor for cursor-based pagination of list results."
+              }
+            ]
+          },
+          "docs": "List parts"
+        },
+        {
+          "info": {
+            "name": "Create a part",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://secure.fleetio.com/api/v1/parts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a part"
+        },
+        {
+          "info": {
+            "name": "Get a part",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://secure.fleetio.com/api/v1/parts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the resource."
+              }
+            ]
+          },
+          "docs": "Get a part"
+        },
+        {
+          "info": {
+            "name": "Update a part",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://secure.fleetio.com/api/v1/parts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a part"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

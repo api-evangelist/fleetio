@@ -1,0 +1,457 @@
+{
+  "item": [
+    {
+      "id": "3fcc44fe-eb7c-47f5-bebd-9c91d8e76e63",
+      "name": "Work Orders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b91b8949-35fc-450c-b788-fdd6ad9171c6",
+          "name": "List work orders",
+          "request": {
+            "name": "List work orders",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "work_orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "50",
+                  "description": "Number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_cursor",
+                  "value": "<string>",
+                  "description": "Cursor for cursor-based pagination of list results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7c527513-158a-4b0a-9d29-e9df64d01f4e",
+              "name": "A list of work orders.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "work_orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "50"
+                    },
+                    {
+                      "key": "start_cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8541,\n    \"number\": \"string\",\n    \"vehicle_id\": 353,\n    \"work_order_status_id\": 3966,\n    \"work_order_status_name\": \"string\",\n    \"issued_at\": \"2010-04-05T17:36:45.781Z\",\n    \"completed_at\": \"2000-08-08T23:12:26.805Z\",\n    \"scheduled_at\": \"1996-11-08T21:22:07.501Z\",\n    \"meter_value\": 9428.746208905313,\n    \"total_amount\": 8837.925135005731,\n    \"labor_subtotal\": 3039.2410833388826,\n    \"parts_subtotal\": 2774.314368373143,\n    \"created_at\": \"1989-06-13T19:35:54.222Z\",\n    \"updated_at\": \"1989-10-29T12:58:39.524Z\"\n  },\n  {\n    \"id\": 3365,\n    \"number\": \"string\",\n    \"vehicle_id\": 6670,\n    \"work_order_status_id\": 5882,\n    \"work_order_status_name\": \"string\",\n    \"issued_at\": \"2014-09-18T23:30:00.638Z\",\n    \"completed_at\": \"1956-02-22T10:26:30.480Z\",\n    \"scheduled_at\": \"2000-11-10T00:22:51.442Z\",\n    \"meter_value\": 9885.369384657099,\n    \"total_amount\": 508.79014574221617,\n    \"labor_subtotal\": 1695.760684057247,\n    \"parts_subtotal\": 842.6382288270618,\n    \"created_at\": \"1976-06-28T09:25:15.725Z\",\n    \"updated_at\": \"1996-12-05T07:18:04.705Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fbfca266-77dd-4c2c-8513-a978ccbd73bf",
+          "name": "Create a work order",
+          "request": {
+            "name": "Create a work order",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "work_orders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"<string>\",\n  \"vehicle_id\": \"<long>\",\n  \"work_order_status_id\": \"<long>\",\n  \"work_order_status_name\": \"<string>\",\n  \"issued_at\": \"<dateTime>\",\n  \"completed_at\": \"<dateTime>\",\n  \"scheduled_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9993c910-1304-468a-adbb-8f9da1ec44e3",
+              "name": "The created work order.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "work_orders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vehicle_id\": \"<long>\",\n  \"work_order_status_id\": \"<long>\",\n  \"work_order_status_name\": \"<string>\",\n  \"issued_at\": \"<dateTime>\",\n  \"completed_at\": \"<dateTime>\",\n  \"scheduled_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3638,\n  \"number\": \"<string>\",\n  \"vehicle_id\": \"<long>\",\n  \"work_order_status_id\": \"<long>\",\n  \"work_order_status_name\": \"<string>\",\n  \"issued_at\": \"<dateTime>\",\n  \"completed_at\": \"<dateTime>\",\n  \"scheduled_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"created_at\": \"1968-05-29T15:08:15.826Z\",\n  \"updated_at\": \"2024-07-02T15:07:20.996Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43c8993c-30a9-4d02-9d2b-c1ea2173b065",
+          "name": "Get a work order",
+          "request": {
+            "name": "Get a work order",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "work_orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "578d8116-c2df-46b5-bf34-ef5c4c9a93db",
+              "name": "The requested work order.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "work_orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3638,\n  \"number\": \"<string>\",\n  \"vehicle_id\": \"<long>\",\n  \"work_order_status_id\": \"<long>\",\n  \"work_order_status_name\": \"<string>\",\n  \"issued_at\": \"<dateTime>\",\n  \"completed_at\": \"<dateTime>\",\n  \"scheduled_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"created_at\": \"1968-05-29T15:08:15.826Z\",\n  \"updated_at\": \"2024-07-02T15:07:20.996Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cd7b1a8e-40b6-4aba-9aab-a73b409f3cb6",
+          "name": "Update a work order",
+          "request": {
+            "name": "Update a work order",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "work_orders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"<string>\",\n  \"vehicle_id\": \"<long>\",\n  \"work_order_status_id\": \"<long>\",\n  \"work_order_status_name\": \"<string>\",\n  \"issued_at\": \"<dateTime>\",\n  \"completed_at\": \"<dateTime>\",\n  \"scheduled_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "20081aab-691e-4a56-866e-464ec8c598bf",
+              "name": "The updated work order.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "work_orders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"vehicle_id\": \"<long>\",\n  \"work_order_status_id\": \"<long>\",\n  \"work_order_status_name\": \"<string>\",\n  \"issued_at\": \"<dateTime>\",\n  \"completed_at\": \"<dateTime>\",\n  \"scheduled_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3638,\n  \"number\": \"<string>\",\n  \"vehicle_id\": \"<long>\",\n  \"work_order_status_id\": \"<long>\",\n  \"work_order_status_name\": \"<string>\",\n  \"issued_at\": \"<dateTime>\",\n  \"completed_at\": \"<dateTime>\",\n  \"scheduled_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"created_at\": \"1968-05-29T15:08:15.826Z\",\n  \"updated_at\": \"2024-07-02T15:07:20.996Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://secure.fleetio.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7fe45c5e-2f1e-48a6-a35e-15ee01c6182f",
+    "name": "Fleetio Developer Contacts Work Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.\n\nContact Support:\n Name: Fleetio Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

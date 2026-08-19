@@ -1,0 +1,457 @@
+{
+  "item": [
+    {
+      "id": "87aa2f19-60a6-4ec6-9ead-d7a2e5139f97",
+      "name": "Service Entries",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "85e16acb-a6b8-4081-9041-3a99e8697c3c",
+          "name": "List service entries",
+          "request": {
+            "name": "List service entries",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "service_entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "50",
+                  "description": "Number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_cursor",
+                  "value": "<string>",
+                  "description": "Cursor for cursor-based pagination of list results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e0cf028e-fa6c-4fef-ab11-3ccba0b589d1",
+              "name": "A list of service entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "service_entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "50"
+                    },
+                    {
+                      "key": "start_cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 8295,\n    \"vehicle_id\": 7787,\n    \"completed_at\": \"1979-09-02T03:40:19.261Z\",\n    \"started_at\": \"1955-03-15T03:54:36.887Z\",\n    \"meter_value\": 2329.380178011694,\n    \"total_amount\": 5409.668178536729,\n    \"labor_subtotal\": 4894.509657491118,\n    \"parts_subtotal\": 3909.7965204946363,\n    \"vendor_id\": 3960,\n    \"is_sample\": true,\n    \"created_at\": \"1948-08-24T03:07:43.277Z\",\n    \"updated_at\": \"1968-05-30T17:30:59.407Z\"\n  },\n  {\n    \"id\": 5269,\n    \"vehicle_id\": 398,\n    \"completed_at\": \"2006-01-01T00:18:56.950Z\",\n    \"started_at\": \"2017-02-25T06:55:18.066Z\",\n    \"meter_value\": 3985.668211707094,\n    \"total_amount\": 8890.043915773322,\n    \"labor_subtotal\": 217.55744060354522,\n    \"parts_subtotal\": 5302.6656965344355,\n    \"vendor_id\": 424,\n    \"is_sample\": true,\n    \"created_at\": \"1973-09-03T02:02:28.694Z\",\n    \"updated_at\": \"1953-10-06T22:01:03.176Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9cfa2dac-c616-4194-8f38-e00bcdfa2af3",
+          "name": "Create a service entry",
+          "request": {
+            "name": "Create a service entry",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "service_entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle_id\": \"<long>\",\n  \"completed_at\": \"<dateTime>\",\n  \"started_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"vendor_id\": \"<long>\",\n  \"is_sample\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a88e6023-131f-4997-b9c6-f559c7f2ef05",
+              "name": "The created service entry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "service_entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vehicle_id\": \"<long>\",\n  \"completed_at\": \"<dateTime>\",\n  \"started_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"vendor_id\": \"<long>\",\n  \"is_sample\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8325,\n  \"vehicle_id\": \"<long>\",\n  \"completed_at\": \"<dateTime>\",\n  \"started_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"vendor_id\": \"<long>\",\n  \"is_sample\": \"<boolean>\",\n  \"created_at\": \"1979-06-16T04:28:36.504Z\",\n  \"updated_at\": \"1958-10-11T02:35:56.211Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a7d66f7-7c16-4b52-a904-d000db93d9c6",
+          "name": "Get a service entry",
+          "request": {
+            "name": "Get a service entry",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "service_entries",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5c0ca153-9fa6-4cc4-aefb-2179f16749b8",
+              "name": "The requested service entry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "service_entries",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8325,\n  \"vehicle_id\": \"<long>\",\n  \"completed_at\": \"<dateTime>\",\n  \"started_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"vendor_id\": \"<long>\",\n  \"is_sample\": \"<boolean>\",\n  \"created_at\": \"1979-06-16T04:28:36.504Z\",\n  \"updated_at\": \"1958-10-11T02:35:56.211Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42082336-33c2-48d1-9a96-167299bb0c6d",
+          "name": "Update a service entry",
+          "request": {
+            "name": "Update a service entry",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "service_entries",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle_id\": \"<long>\",\n  \"completed_at\": \"<dateTime>\",\n  \"started_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"vendor_id\": \"<long>\",\n  \"is_sample\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6269973b-e0b8-4d66-9ea6-1477c471e799",
+              "name": "The updated service entry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "service_entries",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vehicle_id\": \"<long>\",\n  \"completed_at\": \"<dateTime>\",\n  \"started_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"vendor_id\": \"<long>\",\n  \"is_sample\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8325,\n  \"vehicle_id\": \"<long>\",\n  \"completed_at\": \"<dateTime>\",\n  \"started_at\": \"<dateTime>\",\n  \"meter_value\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"labor_subtotal\": \"<number>\",\n  \"parts_subtotal\": \"<number>\",\n  \"vendor_id\": \"<long>\",\n  \"is_sample\": \"<boolean>\",\n  \"created_at\": \"1979-06-16T04:28:36.504Z\",\n  \"updated_at\": \"1958-10-11T02:35:56.211Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://secure.fleetio.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7a87dc7b-f6ec-4fb8-98ae-df06e46cb7e8",
+    "name": "Fleetio Developer Contacts Service Entries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.\n\nContact Support:\n Name: Fleetio Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

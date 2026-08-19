@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fleetio Developer Contacts Inventory Journal Entries API",
+    "version": "2025-05-05"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Inventory Journal Entries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List inventory journal entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://secure.fleetio.com/api/v1/inventory_journal_entries",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to return per page."
+              },
+              {
+                "name": "start_cursor",
+                "value": "",
+                "type": "query",
+                "description": "Cursor for cursor-based pagination of list results."
+              }
+            ]
+          },
+          "docs": "List inventory journal entries"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

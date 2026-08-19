@@ -1,0 +1,545 @@
+{
+  "item": [
+    {
+      "id": "2d4ba318-3ba9-433a-8851-c25c0b30305f",
+      "name": "Vehicles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1177fb32-c66f-49ce-b488-37da1acad169",
+          "name": "List vehicles",
+          "request": {
+            "name": "List vehicles",
+            "description": {
+              "content": "Returns a paginated array of all vehicles in the account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "vehicles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "50",
+                  "description": "Number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_cursor",
+                  "value": "<string>",
+                  "description": "Cursor for cursor-based pagination of list results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9a765a5f-681f-4dd3-a701-189f697a2e87",
+              "name": "A list of vehicles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vehicles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "50"
+                    },
+                    {
+                      "key": "start_cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 757,\n    \"account_id\": 6468,\n    \"name\": \"string\",\n    \"vehicle_make\": \"string\",\n    \"vehicle_model\": \"string\",\n    \"vehicle_year\": 8307,\n    \"vin\": \"string\",\n    \"license_plate\": \"string\",\n    \"group_id\": 6662,\n    \"vehicle_status_name\": \"string\",\n    \"vehicle_type_name\": \"string\",\n    \"primary_meter_value\": 3055.432700765027,\n    \"primary_meter_unit\": \"string\",\n    \"archived_at\": \"1953-08-21T15:09:49.928Z\",\n    \"created_at\": \"1983-12-16T08:31:41.773Z\",\n    \"updated_at\": \"1975-11-20T01:53:18.487Z\"\n  },\n  {\n    \"id\": 7283,\n    \"account_id\": 5175,\n    \"name\": \"string\",\n    \"vehicle_make\": \"string\",\n    \"vehicle_model\": \"string\",\n    \"vehicle_year\": 6969,\n    \"vin\": \"string\",\n    \"license_plate\": \"string\",\n    \"group_id\": 8792,\n    \"vehicle_status_name\": \"string\",\n    \"vehicle_type_name\": \"string\",\n    \"primary_meter_value\": 5365.971254180573,\n    \"primary_meter_unit\": \"string\",\n    \"archived_at\": \"1966-10-21T22:03:14.439Z\",\n    \"created_at\": \"2008-10-18T08:59:01.278Z\",\n    \"updated_at\": \"2023-05-07T06:42:28.400Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb350a91-1cf8-4033-9f1f-3cef7738c1bb",
+          "name": "Create a vehicle",
+          "request": {
+            "name": "Create a vehicle",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vehicles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_year\": \"<integer>\",\n  \"vin\": \"<string>\",\n  \"license_plate\": \"<string>\",\n  \"group_id\": \"<long>\",\n  \"vehicle_status_name\": \"<string>\",\n  \"vehicle_type_name\": \"<string>\",\n  \"primary_meter_value\": \"<number>\",\n  \"primary_meter_unit\": \"<string>\",\n  \"archived_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ee95fe00-ec5d-407f-8907-a0fcb03aea6b",
+              "name": "The created vehicle.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vehicles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_year\": \"<integer>\",\n  \"vin\": \"<string>\",\n  \"license_plate\": \"<string>\",\n  \"group_id\": \"<long>\",\n  \"vehicle_status_name\": \"<string>\",\n  \"vehicle_type_name\": \"<string>\",\n  \"primary_meter_value\": \"<number>\",\n  \"primary_meter_unit\": \"<string>\",\n  \"archived_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5580,\n  \"account_id\": 3860,\n  \"name\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_year\": \"<integer>\",\n  \"vin\": \"<string>\",\n  \"license_plate\": \"<string>\",\n  \"group_id\": \"<long>\",\n  \"vehicle_status_name\": \"<string>\",\n  \"vehicle_type_name\": \"<string>\",\n  \"primary_meter_value\": \"<number>\",\n  \"primary_meter_unit\": \"<string>\",\n  \"archived_at\": \"<dateTime>\",\n  \"created_at\": \"1992-01-28T06:48:11.974Z\",\n  \"updated_at\": \"2000-05-27T12:16:19.594Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0baef363-9952-497b-8daf-3844c33b59cc",
+          "name": "Get a vehicle",
+          "request": {
+            "name": "Get a vehicle",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vehicles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "87a80905-cb52-4398-8a12-99d606ea652c",
+              "name": "The requested vehicle.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vehicles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5580,\n  \"account_id\": 3860,\n  \"name\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_year\": \"<integer>\",\n  \"vin\": \"<string>\",\n  \"license_plate\": \"<string>\",\n  \"group_id\": \"<long>\",\n  \"vehicle_status_name\": \"<string>\",\n  \"vehicle_type_name\": \"<string>\",\n  \"primary_meter_value\": \"<number>\",\n  \"primary_meter_unit\": \"<string>\",\n  \"archived_at\": \"<dateTime>\",\n  \"created_at\": \"1992-01-28T06:48:11.974Z\",\n  \"updated_at\": \"2000-05-27T12:16:19.594Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95ccf3f9-d0e3-4e4a-a411-3ebb88f2a6d4",
+          "name": "Update a vehicle",
+          "request": {
+            "name": "Update a vehicle",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vehicles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_year\": \"<integer>\",\n  \"vin\": \"<string>\",\n  \"license_plate\": \"<string>\",\n  \"group_id\": \"<long>\",\n  \"vehicle_status_name\": \"<string>\",\n  \"vehicle_type_name\": \"<string>\",\n  \"primary_meter_value\": \"<number>\",\n  \"primary_meter_unit\": \"<string>\",\n  \"archived_at\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "66fe4bcf-ef9f-446d-9726-9157d164fa79",
+              "name": "The updated vehicle.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vehicles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_year\": \"<integer>\",\n  \"vin\": \"<string>\",\n  \"license_plate\": \"<string>\",\n  \"group_id\": \"<long>\",\n  \"vehicle_status_name\": \"<string>\",\n  \"vehicle_type_name\": \"<string>\",\n  \"primary_meter_value\": \"<number>\",\n  \"primary_meter_unit\": \"<string>\",\n  \"archived_at\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 5580,\n  \"account_id\": 3860,\n  \"name\": \"<string>\",\n  \"vehicle_make\": \"<string>\",\n  \"vehicle_model\": \"<string>\",\n  \"vehicle_year\": \"<integer>\",\n  \"vin\": \"<string>\",\n  \"license_plate\": \"<string>\",\n  \"group_id\": \"<long>\",\n  \"vehicle_status_name\": \"<string>\",\n  \"vehicle_type_name\": \"<string>\",\n  \"primary_meter_value\": \"<number>\",\n  \"primary_meter_unit\": \"<string>\",\n  \"archived_at\": \"<dateTime>\",\n  \"created_at\": \"1992-01-28T06:48:11.974Z\",\n  \"updated_at\": \"2000-05-27T12:16:19.594Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54e6a0dd-7dfc-4d8e-95fa-f8b8bb39eac2",
+          "name": "Delete a vehicle",
+          "request": {
+            "name": "Delete a vehicle",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "vehicles",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dbb66ece-4020-446b-9c1e-30117e3e8a9e",
+              "name": "The vehicle was deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "vehicles",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://secure.fleetio.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "056cdda0-d933-472e-b328-2d670aae64cc",
+    "name": "Fleetio Developer Contacts Vehicles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.\n\nContact Support:\n Name: Fleetio Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

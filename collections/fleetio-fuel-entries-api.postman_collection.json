@@ -1,0 +1,542 @@
+{
+  "item": [
+    {
+      "id": "c2b538e1-12a2-4233-9be7-a708d35b83e0",
+      "name": "Fuel Entries",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cca9c00d-45e1-4f1f-b170-3701a7a16440",
+          "name": "List fuel entries",
+          "request": {
+            "name": "List fuel entries",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "fuel_entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "50",
+                  "description": "Number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_cursor",
+                  "value": "<string>",
+                  "description": "Cursor for cursor-based pagination of list results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bba7bb7e-1d0e-400e-9a67-35d7dab64db4",
+              "name": "A list of fuel entries.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fuel_entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "50"
+                    },
+                    {
+                      "key": "start_cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 1900,\n    \"vehicle_id\": 4364,\n    \"date\": \"1998-06-26T14:41:14.591Z\",\n    \"us_gallons\": 7311.9229241685925,\n    \"cost\": 4455.854959726876,\n    \"price_per_volume_unit\": 3524.158482916414,\n    \"total_amount\": 303.19889757054017,\n    \"usage_in_mi\": 4251.625573554049,\n    \"meter_value\": 264.5511563897851,\n    \"is_full\": false,\n    \"personal\": true,\n    \"vendor_id\": 8196,\n    \"created_at\": \"2006-06-02T04:25:46.535Z\",\n    \"updated_at\": \"1962-11-15T06:38:03.440Z\"\n  },\n  {\n    \"id\": 1391,\n    \"vehicle_id\": 3342,\n    \"date\": \"1980-01-15T22:21:58.214Z\",\n    \"us_gallons\": 3075.727042423765,\n    \"cost\": 3412.7285292518063,\n    \"price_per_volume_unit\": 8133.887776147349,\n    \"total_amount\": 9659.874577868639,\n    \"usage_in_mi\": 2841.2496434908894,\n    \"meter_value\": 1984.4230869675662,\n    \"is_full\": false,\n    \"personal\": true,\n    \"vendor_id\": 9507,\n    \"created_at\": \"2010-10-04T08:43:51.766Z\",\n    \"updated_at\": \"2009-01-22T18:28:59.298Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1aecbb0f-309d-440e-b890-9c88516eabc8",
+          "name": "Create a fuel entry",
+          "request": {
+            "name": "Create a fuel entry",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "fuel_entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle_id\": \"<long>\",\n  \"date\": \"<dateTime>\",\n  \"us_gallons\": \"<number>\",\n  \"cost\": \"<number>\",\n  \"price_per_volume_unit\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"usage_in_mi\": \"<number>\",\n  \"meter_value\": \"<number>\",\n  \"is_full\": \"<boolean>\",\n  \"personal\": \"<boolean>\",\n  \"vendor_id\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c457c578-3db2-40f5-8be9-67371d7f7c5c",
+              "name": "The created fuel entry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fuel_entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vehicle_id\": \"<long>\",\n  \"date\": \"<dateTime>\",\n  \"us_gallons\": \"<number>\",\n  \"cost\": \"<number>\",\n  \"price_per_volume_unit\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"usage_in_mi\": \"<number>\",\n  \"meter_value\": \"<number>\",\n  \"is_full\": \"<boolean>\",\n  \"personal\": \"<boolean>\",\n  \"vendor_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6795,\n  \"vehicle_id\": \"<long>\",\n  \"date\": \"<dateTime>\",\n  \"us_gallons\": \"<number>\",\n  \"cost\": \"<number>\",\n  \"price_per_volume_unit\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"usage_in_mi\": \"<number>\",\n  \"meter_value\": \"<number>\",\n  \"is_full\": \"<boolean>\",\n  \"personal\": \"<boolean>\",\n  \"vendor_id\": \"<long>\",\n  \"created_at\": \"2010-01-19T09:43:59.516Z\",\n  \"updated_at\": \"2013-03-17T11:56:45.189Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a4e16ea-37ac-4e4b-b6bc-3e43426b4a97",
+          "name": "Get a fuel entry",
+          "request": {
+            "name": "Get a fuel entry",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "fuel_entries",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "426f1eff-3288-4b1b-8d91-e3de554d872f",
+              "name": "The requested fuel entry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fuel_entries",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6795,\n  \"vehicle_id\": \"<long>\",\n  \"date\": \"<dateTime>\",\n  \"us_gallons\": \"<number>\",\n  \"cost\": \"<number>\",\n  \"price_per_volume_unit\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"usage_in_mi\": \"<number>\",\n  \"meter_value\": \"<number>\",\n  \"is_full\": \"<boolean>\",\n  \"personal\": \"<boolean>\",\n  \"vendor_id\": \"<long>\",\n  \"created_at\": \"2010-01-19T09:43:59.516Z\",\n  \"updated_at\": \"2013-03-17T11:56:45.189Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6cb9a506-23bd-4cc8-8e91-47032100049a",
+          "name": "Update a fuel entry",
+          "request": {
+            "name": "Update a fuel entry",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "fuel_entries",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"vehicle_id\": \"<long>\",\n  \"date\": \"<dateTime>\",\n  \"us_gallons\": \"<number>\",\n  \"cost\": \"<number>\",\n  \"price_per_volume_unit\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"usage_in_mi\": \"<number>\",\n  \"meter_value\": \"<number>\",\n  \"is_full\": \"<boolean>\",\n  \"personal\": \"<boolean>\",\n  \"vendor_id\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8633309d-5d80-4444-b9b9-cc241e85e52e",
+              "name": "The updated fuel entry.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fuel_entries",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"vehicle_id\": \"<long>\",\n  \"date\": \"<dateTime>\",\n  \"us_gallons\": \"<number>\",\n  \"cost\": \"<number>\",\n  \"price_per_volume_unit\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"usage_in_mi\": \"<number>\",\n  \"meter_value\": \"<number>\",\n  \"is_full\": \"<boolean>\",\n  \"personal\": \"<boolean>\",\n  \"vendor_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 6795,\n  \"vehicle_id\": \"<long>\",\n  \"date\": \"<dateTime>\",\n  \"us_gallons\": \"<number>\",\n  \"cost\": \"<number>\",\n  \"price_per_volume_unit\": \"<number>\",\n  \"total_amount\": \"<number>\",\n  \"usage_in_mi\": \"<number>\",\n  \"meter_value\": \"<number>\",\n  \"is_full\": \"<boolean>\",\n  \"personal\": \"<boolean>\",\n  \"vendor_id\": \"<long>\",\n  \"created_at\": \"2010-01-19T09:43:59.516Z\",\n  \"updated_at\": \"2013-03-17T11:56:45.189Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9bef2dcb-49e2-476b-b7ed-76aa9a4cae91",
+          "name": "Delete a fuel entry",
+          "request": {
+            "name": "Delete a fuel entry",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "fuel_entries",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec1365b9-bcb5-48b2-bc73-b4ef302e9290",
+              "name": "The fuel entry was deleted.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "fuel_entries",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://secure.fleetio.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2bfda9ad-61f3-4219-ac5e-18dfb00a3dab",
+    "name": "Fleetio Developer Contacts Fuel Entries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.\n\nContact Support:\n Name: Fleetio Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

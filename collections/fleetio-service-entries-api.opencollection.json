@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fleetio Developer Contacts Service Entries API",
+    "version": "2025-05-05"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Service Entries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List service entries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://secure.fleetio.com/api/v1/service_entries",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to return per page."
+              },
+              {
+                "name": "start_cursor",
+                "value": "",
+                "type": "query",
+                "description": "Cursor for cursor-based pagination of list results."
+              }
+            ]
+          },
+          "docs": "List service entries"
+        },
+        {
+          "info": {
+            "name": "Create a service entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://secure.fleetio.com/api/v1/service_entries",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a service entry"
+        },
+        {
+          "info": {
+            "name": "Get a service entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://secure.fleetio.com/api/v1/service_entries/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the resource."
+              }
+            ]
+          },
+          "docs": "Get a service entry"
+        },
+        {
+          "info": {
+            "name": "Update a service entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://secure.fleetio.com/api/v1/service_entries/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a service entry"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

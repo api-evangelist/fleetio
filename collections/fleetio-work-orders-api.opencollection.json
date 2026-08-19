@@ -1,0 +1,108 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fleetio Developer Contacts Work Orders API",
+    "version": "2025-05-05"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Work Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List work orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://secure.fleetio.com/api/v1/work_orders",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to return per page."
+              },
+              {
+                "name": "start_cursor",
+                "value": "",
+                "type": "query",
+                "description": "Cursor for cursor-based pagination of list results."
+              }
+            ]
+          },
+          "docs": "List work orders"
+        },
+        {
+          "info": {
+            "name": "Create a work order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://secure.fleetio.com/api/v1/work_orders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a work order"
+        },
+        {
+          "info": {
+            "name": "Get a work order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://secure.fleetio.com/api/v1/work_orders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the resource."
+              }
+            ]
+          },
+          "docs": "Get a work order"
+        },
+        {
+          "info": {
+            "name": "Update a work order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://secure.fleetio.com/api/v1/work_orders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the resource."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a work order"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

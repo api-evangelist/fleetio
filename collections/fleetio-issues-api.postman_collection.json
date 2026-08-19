@@ -1,0 +1,457 @@
+{
+  "item": [
+    {
+      "id": "05b39faa-4eb3-4d39-889a-b119b061cfa8",
+      "name": "Issues",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8d3cd5bf-8211-46cf-b220-27511549cebd",
+          "name": "List issues",
+          "request": {
+            "name": "List issues",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "issues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "50",
+                  "description": "Number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_cursor",
+                  "value": "<string>",
+                  "description": "Cursor for cursor-based pagination of list results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9dc58fa5-9815-4183-af13-12388d752048",
+              "name": "A list of issues.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "issues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "50"
+                    },
+                    {
+                      "key": "start_cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 816,\n    \"number\": 9358,\n    \"vehicle_id\": 8025,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"state\": \"string\",\n    \"reported_at\": \"1966-01-22T22:11:14.240Z\",\n    \"resolved_at\": \"1990-04-30T03:45:00.275Z\",\n    \"reported_by_id\": 3709,\n    \"assigned_contact_id\": 6921,\n    \"created_at\": \"1947-07-13T10:34:13.324Z\",\n    \"updated_at\": \"1948-08-02T18:30:44.153Z\"\n  },\n  {\n    \"id\": 4877,\n    \"number\": 2582,\n    \"vehicle_id\": 3750,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"state\": \"string\",\n    \"reported_at\": \"1967-08-09T18:14:12.444Z\",\n    \"resolved_at\": \"1970-05-13T11:32:29.578Z\",\n    \"reported_by_id\": 6656,\n    \"assigned_contact_id\": 2443,\n    \"created_at\": \"2013-10-15T19:53:43.166Z\",\n    \"updated_at\": \"1986-08-21T15:54:41.703Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "255ba3f6-0a10-4019-ab4f-9381b2324b44",
+          "name": "Create an issue",
+          "request": {
+            "name": "Create an issue",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "issues"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"<integer>\",\n  \"vehicle_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"reported_at\": \"<dateTime>\",\n  \"resolved_at\": \"<dateTime>\",\n  \"reported_by_id\": \"<long>\",\n  \"assigned_contact_id\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4e7a171b-ce87-45a0-adef-949107ccaa0c",
+              "name": "The created issue.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "issues"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<integer>\",\n  \"vehicle_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"reported_at\": \"<dateTime>\",\n  \"resolved_at\": \"<dateTime>\",\n  \"reported_by_id\": \"<long>\",\n  \"assigned_contact_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1108,\n  \"number\": \"<integer>\",\n  \"vehicle_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"reported_at\": \"<dateTime>\",\n  \"resolved_at\": \"<dateTime>\",\n  \"reported_by_id\": \"<long>\",\n  \"assigned_contact_id\": \"<long>\",\n  \"created_at\": \"1964-10-05T00:05:30.059Z\",\n  \"updated_at\": \"1969-12-08T05:23:42.786Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6387ccf5-05d8-4f8d-bd9a-84abb4a0315a",
+          "name": "Get an issue",
+          "request": {
+            "name": "Get an issue",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "issues",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ba1617ba-dce5-4ac5-be79-a994ce2be97d",
+              "name": "The requested issue.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "issues",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1108,\n  \"number\": \"<integer>\",\n  \"vehicle_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"reported_at\": \"<dateTime>\",\n  \"resolved_at\": \"<dateTime>\",\n  \"reported_by_id\": \"<long>\",\n  \"assigned_contact_id\": \"<long>\",\n  \"created_at\": \"1964-10-05T00:05:30.059Z\",\n  \"updated_at\": \"1969-12-08T05:23:42.786Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2abdfa31-e39b-4dd5-a663-15d01fa71e7a",
+          "name": "Update an issue",
+          "request": {
+            "name": "Update an issue",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "issues",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"<integer>\",\n  \"vehicle_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"reported_at\": \"<dateTime>\",\n  \"resolved_at\": \"<dateTime>\",\n  \"reported_by_id\": \"<long>\",\n  \"assigned_contact_id\": \"<long>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "99a402b1-10ba-4569-967a-61944bc05354",
+              "name": "The updated issue.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "issues",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<integer>\",\n  \"vehicle_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"reported_at\": \"<dateTime>\",\n  \"resolved_at\": \"<dateTime>\",\n  \"reported_by_id\": \"<long>\",\n  \"assigned_contact_id\": \"<long>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 1108,\n  \"number\": \"<integer>\",\n  \"vehicle_id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"reported_at\": \"<dateTime>\",\n  \"resolved_at\": \"<dateTime>\",\n  \"reported_by_id\": \"<long>\",\n  \"assigned_contact_id\": \"<long>\",\n  \"created_at\": \"1964-10-05T00:05:30.059Z\",\n  \"updated_at\": \"1969-12-08T05:23:42.786Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://secure.fleetio.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8b3b1225-d968-49b4-995b-d27d1061dfb7",
+    "name": "Fleetio Developer Contacts Issues API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.\n\nContact Support:\n Name: Fleetio Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

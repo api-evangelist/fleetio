@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Fleetio Developer Contacts Service Reminders API",
+    "version": "2025-05-05"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Service Reminders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List service reminders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://secure.fleetio.com/api/v1/service_reminders",
+            "params": [
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of records to return per page."
+              },
+              {
+                "name": "start_cursor",
+                "value": "",
+                "type": "query",
+                "description": "Cursor for cursor-based pagination of list results."
+              }
+            ]
+          },
+          "docs": "List service reminders"
+        },
+        {
+          "info": {
+            "name": "Get a service reminder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://secure.fleetio.com/api/v1/service_reminders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "The unique identifier of the resource."
+              }
+            ]
+          },
+          "docs": "Get a service reminder"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

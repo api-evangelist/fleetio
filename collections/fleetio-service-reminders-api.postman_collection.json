@@ -1,0 +1,243 @@
+{
+  "item": [
+    {
+      "id": "9d52c53a-3b95-4d7a-b981-546f9b6cfa80",
+      "name": "Service Reminders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "56239b17-5724-4ccd-9667-dd25c9b77c3e",
+          "name": "List service reminders",
+          "request": {
+            "name": "List service reminders",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "service_reminders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "50",
+                  "description": "Number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_cursor",
+                  "value": "<string>",
+                  "description": "Cursor for cursor-based pagination of list results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cbe59053-6c57-49c2-ab47-84c35b90c740",
+              "name": "A list of service reminders.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "service_reminders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "50"
+                    },
+                    {
+                      "key": "start_cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 9133,\n    \"vehicle_id\": 8389,\n    \"service_task_id\": 6471,\n    \"service_task_name\": \"string\",\n    \"due_soon_threshold\": 2310.3665287949225,\n    \"time_due_date\": \"2005-07-22\",\n    \"meter_due_value\": 9099.073593858462,\n    \"next_due_status\": \"string\",\n    \"created_at\": \"1973-09-22T18:36:33.170Z\",\n    \"updated_at\": \"2024-11-23T10:47:00.438Z\"\n  },\n  {\n    \"id\": 6437,\n    \"vehicle_id\": 4849,\n    \"service_task_id\": 4471,\n    \"service_task_name\": \"string\",\n    \"due_soon_threshold\": 3563.628062852274,\n    \"time_due_date\": \"1968-06-16\",\n    \"meter_due_value\": 4187.834272894809,\n    \"next_due_status\": \"string\",\n    \"created_at\": \"1998-02-08T23:45:53.510Z\",\n    \"updated_at\": \"2010-06-14T03:35:19.086Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a9a04f58-6c5d-4d06-9770-cd7867281617",
+          "name": "Get a service reminder",
+          "request": {
+            "name": "Get a service reminder",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "service_reminders",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "19fc2492-30da-480c-ac48-d8601d3304d4",
+              "name": "The requested service reminder.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "service_reminders",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8714,\n  \"vehicle_id\": 1924,\n  \"service_task_id\": 8267,\n  \"service_task_name\": \"string\",\n  \"due_soon_threshold\": 3214.795177911608,\n  \"time_due_date\": \"2016-06-10\",\n  \"meter_due_value\": 7995.444779807827,\n  \"next_due_status\": \"string\",\n  \"created_at\": \"1996-10-19T23:11:33.706Z\",\n  \"updated_at\": \"1947-10-23T08:26:12.500Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://secure.fleetio.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "70641331-921b-4be7-afe6-1469cfa97c65",
+    "name": "Fleetio Developer Contacts Service Reminders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.\n\nContact Support:\n Name: Fleetio Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

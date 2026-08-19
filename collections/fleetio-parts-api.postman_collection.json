@@ -1,0 +1,457 @@
+{
+  "item": [
+    {
+      "id": "85ed30b7-c01c-41b1-a1d1-54b8e8d06fbb",
+      "name": "Parts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b609532c-71bf-4160-925f-753b85141fc6",
+          "name": "List parts",
+          "request": {
+            "name": "List parts",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "parts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "50",
+                  "description": "Number of records to return per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "start_cursor",
+                  "value": "<string>",
+                  "description": "Cursor for cursor-based pagination of list results."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3174ba5a-9e6c-47c7-8ebe-2a52260ede89",
+              "name": "A list of parts.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "parts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "per_page",
+                      "value": "50"
+                    },
+                    {
+                      "key": "start_cursor",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 6248,\n    \"number\": \"string\",\n    \"description\": \"string\",\n    \"manufacturer_part_number\": \"string\",\n    \"upc\": \"string\",\n    \"unit_cost\": 6237.445819020363,\n    \"measurement_unit_name\": \"string\",\n    \"part_category_name\": \"string\",\n    \"created_at\": \"2001-12-27T22:31:32.855Z\",\n    \"updated_at\": \"2000-08-24T23:33:28.125Z\"\n  },\n  {\n    \"id\": 7750,\n    \"number\": \"string\",\n    \"description\": \"string\",\n    \"manufacturer_part_number\": \"string\",\n    \"upc\": \"string\",\n    \"unit_cost\": 3965.9149529211845,\n    \"measurement_unit_name\": \"string\",\n    \"part_category_name\": \"string\",\n    \"created_at\": \"2007-08-16T23:33:50.301Z\",\n    \"updated_at\": \"1956-09-20T08:47:26.014Z\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f2bafcff-412d-47be-873a-3c52a0d663ce",
+          "name": "Create a part",
+          "request": {
+            "name": "Create a part",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "parts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"<string>\",\n  \"description\": \"<string>\",\n  \"manufacturer_part_number\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"unit_cost\": \"<number>\",\n  \"measurement_unit_name\": \"<string>\",\n  \"part_category_name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e6ad5bae-2e74-4860-a3af-0c1a1e4f4ebc",
+              "name": "The created part.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "parts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"description\": \"<string>\",\n  \"manufacturer_part_number\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"unit_cost\": \"<number>\",\n  \"measurement_unit_name\": \"<string>\",\n  \"part_category_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3234,\n  \"number\": \"<string>\",\n  \"description\": \"<string>\",\n  \"manufacturer_part_number\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"unit_cost\": \"<number>\",\n  \"measurement_unit_name\": \"<string>\",\n  \"part_category_name\": \"<string>\",\n  \"created_at\": \"1957-10-14T21:33:13.316Z\",\n  \"updated_at\": \"1954-01-26T13:27:48.022Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7978b80a-bb94-46c7-aeac-e898e3a611cf",
+          "name": "Get a part",
+          "request": {
+            "name": "Get a part",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "parts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fbdee28c-ffda-4533-9d16-da7ffa7e0580",
+              "name": "The requested part.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "parts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3234,\n  \"number\": \"<string>\",\n  \"description\": \"<string>\",\n  \"manufacturer_part_number\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"unit_cost\": \"<number>\",\n  \"measurement_unit_name\": \"<string>\",\n  \"part_category_name\": \"<string>\",\n  \"created_at\": \"1957-10-14T21:33:13.316Z\",\n  \"updated_at\": \"1954-01-26T13:27:48.022Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "63cd57da-0e55-4a34-b696-e250750b00b8",
+          "name": "Update a part",
+          "request": {
+            "name": "Update a part",
+            "description": {},
+            "url": {
+              "path": [
+                "v1",
+                "parts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "id",
+                  "description": "(Required) The unique identifier of the resource."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"number\": \"<string>\",\n  \"description\": \"<string>\",\n  \"manufacturer_part_number\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"unit_cost\": \"<number>\",\n  \"measurement_unit_name\": \"<string>\",\n  \"part_category_name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "865f8e53-ecab-4006-9e2b-7b436e16bb2d",
+              "name": "The updated part.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "parts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "id",
+                      "description": "(Required) The unique identifier of the resource."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"number\": \"<string>\",\n  \"description\": \"<string>\",\n  \"manufacturer_part_number\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"unit_cost\": \"<number>\",\n  \"measurement_unit_name\": \"<string>\",\n  \"part_category_name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 3234,\n  \"number\": \"<string>\",\n  \"description\": \"<string>\",\n  \"manufacturer_part_number\": \"<string>\",\n  \"upc\": \"<string>\",\n  \"unit_cost\": \"<number>\",\n  \"measurement_unit_name\": \"<string>\",\n  \"part_category_name\": \"<string>\",\n  \"created_at\": \"1957-10-14T21:33:13.316Z\",\n  \"updated_at\": \"1954-01-26T13:27:48.022Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://secure.fleetio.com/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "af23a41e-5aa3-460f-b520-bb33a0879bd5",
+    "name": "Fleetio Developer Contacts Parts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.\n\nContact Support:\n Name: Fleetio Developer Support",
+      "type": "text/plain"
+    }
+  }
+}
