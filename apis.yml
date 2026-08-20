@@ -26,6 +26,12 @@ tags:
 - Vehicles
 - Maintenance
 - Telematics
+- Software-as-a-Service
+tags_raw:
+- Fleet Management
+- Vehicles
+- Maintenance
+- Telematics
 - SaaS
 created: '2026-06-21'
 modified: '2026-06-21'
@@ -362,6 +368,8 @@ apis:
   humanURL: https://developer.fleetio.com/docs/api/vehicles
   baseURL: https://secure.fleetio.com/api/v1
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
