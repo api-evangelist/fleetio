@@ -7,6 +7,18 @@ description: Fleetio is a cloud-based fleet management software platform that he
   inspections. The Fleetio Developer API is a JSON REST API at https://secure.fleetio.com/api
   for managing vehicles, contacts, fuel entries, service entries, work orders, parts,
   inspections, and issues, with webhooks for event notifications.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
