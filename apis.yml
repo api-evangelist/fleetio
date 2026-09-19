@@ -128,6 +128,8 @@ apis:
   humanURL: https://developer.fleetio.com/docs/api/vehicles
   baseURL: https://secure.fleetio.com/api/v1
   tags:
+  - Inspection
+  tags_raw:
   - Inspections
   properties:
   - type: OpenAPI
