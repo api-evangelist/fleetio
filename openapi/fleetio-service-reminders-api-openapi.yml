@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Fleetio Developer Contacts Service Reminders API
+  title: Fleetio Developer Service Reminders API
   description: JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.
   termsOfService: https://www.fleetio.com/legal/terms
   contact:
@@ -50,6 +50,43 @@ paths:
               schema:
                 $ref: '#/components/schemas/ServiceReminder'
 components:
+  schemas:
+    ServiceReminder:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        vehicle_id:
+          type: integer
+          format: int64
+        service_task_id:
+          type: integer
+          format: int64
+        service_task_name:
+          type: string
+        due_soon_threshold:
+          type: number
+        time_due_date:
+          type:
+          - string
+          - 'null'
+          format: date
+        meter_due_value:
+          type:
+          - number
+          - 'null'
+        next_due_status:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
   parameters:
     PerPage:
       name: per_page
@@ -75,41 +112,6 @@ components:
       schema:
         type: integer
         format: int64
-  schemas:
-    ServiceReminder:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        vehicle_id:
-          type: integer
-          format: int64
-        service_task_id:
-          type: integer
-          format: int64
-        service_task_name:
-          type: string
-        due_soon_threshold:
-          type: number
-        time_due_date:
-          type: string
-          format: date
-          nullable: true
-        meter_due_value:
-          type: number
-          nullable: true
-        next_due_status:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        updated_at:
-          type: string
-          format: date-time
-          readOnly: true
   securitySchemes:
     AuthorizationToken:
       type: apiKey

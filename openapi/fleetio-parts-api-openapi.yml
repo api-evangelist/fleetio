@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Fleetio Developer Contacts Parts API
+  title: Fleetio Developer Parts API
   description: JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.
   termsOfService: https://www.fleetio.com/legal/terms
   contact:

@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Fleetio Developer Contacts Service Entries API
+  title: Fleetio Developer Service Entries API
   description: JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.
   termsOfService: https://www.fleetio.com/legal/terms
   contact:
@@ -126,9 +126,10 @@ components:
           type: string
           format: date-time
         started_at:
-          type: string
+          type:
+          - string
+          - 'null'
           format: date-time
-          nullable: true
         meter_value:
           type: number
         total_amount:
@@ -138,9 +139,10 @@ components:
         parts_subtotal:
           type: number
         vendor_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         is_sample:
           type: boolean
         created_at:

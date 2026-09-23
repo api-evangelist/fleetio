@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Fleetio Developer Contacts Inspections API
+  title: Fleetio Developer Inspections API
   description: JSON REST API for the Fleetio fleet management platform. Manage vehicles, contacts, fuel entries, service entries, work orders, service reminders, parts and inventory, inspections, and issues, and register webhooks for event notifications. All access is over HTTPS and all data is sent and received as JSON.
   termsOfService: https://www.fleetio.com/legal/terms
   contact:
@@ -71,29 +71,6 @@ components:
       schema:
         type: string
   schemas:
-    InspectionForm:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        title:
-          type: string
-        description:
-          type: string
-        archived_at:
-          type: string
-          format: date-time
-          nullable: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        updated_at:
-          type: string
-          format: date-time
-          readOnly: true
     SubmittedInspectionForm:
       type: object
       properties:
@@ -111,14 +88,39 @@ components:
           type: string
           format: date-time
         contact_id:
-          type: integer
+          type:
+          - integer
+          - 'null'
           format: int64
-          nullable: true
         failed_items_count:
           type: integer
         passed:
           type: boolean
         created_at:
+          type: string
+          format: date-time
+          readOnly: true
+    InspectionForm:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        title:
+          type: string
+        description:
+          type: string
+        archived_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
           type: string
           format: date-time
           readOnly: true

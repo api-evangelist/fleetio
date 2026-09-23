@@ -1,17 +1,7 @@
 {
   "provider": "fleetio",
   "sources": [
-    "fleetio-contacts-api-openapi.yml",
-    "fleetio-fuel-entries-api-openapi.yml",
-    "fleetio-inspections-api-openapi.yml",
-    "fleetio-inventory-journal-entries-api-openapi.yml",
-    "fleetio-issues-api-openapi.yml",
-    "fleetio-parts-api-openapi.yml",
-    "fleetio-service-entries-api-openapi.yml",
-    "fleetio-service-reminders-api-openapi.yml",
-    "fleetio-vehicles-api-openapi.yml",
-    "fleetio-webhooks-api-openapi.yml",
-    "fleetio-work-orders-api-openapi.yml"
+    "_original/fleetio-openapi.yml"
   ],
   "outputs": [
     "fleetio-contacts-api-openapi.yml",
@@ -29,6 +19,22 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "fleetio-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "fleetio-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-fuel-entries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-inspections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-inventory-journal-entries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-issues-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-parts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-service-entries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-service-reminders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-vehicles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "fleetio-work-orders-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
