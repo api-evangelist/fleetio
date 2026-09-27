@@ -95,6 +95,13 @@ paths:
           description: The fuel entry was deleted.
 components:
   parameters:
+    StartCursor:
+      name: start_cursor
+      in: query
+      required: false
+      description: Cursor for cursor-based pagination of list results.
+      schema:
+        type: string
     PerPage:
       name: per_page
       in: query
@@ -104,13 +111,6 @@ components:
         type: integer
         default: 50
         maximum: 100
-    StartCursor:
-      name: start_cursor
-      in: query
-      required: false
-      description: Cursor for cursor-based pagination of list results.
-      schema:
-        type: string
     ResourceId:
       name: id
       in: path

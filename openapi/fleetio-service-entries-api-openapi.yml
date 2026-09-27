@@ -87,15 +87,6 @@ paths:
                 $ref: '#/components/schemas/ServiceEntry'
 components:
   parameters:
-    PerPage:
-      name: per_page
-      in: query
-      required: false
-      description: Number of records to return per page.
-      schema:
-        type: integer
-        default: 50
-        maximum: 100
     StartCursor:
       name: start_cursor
       in: query
@@ -111,6 +102,15 @@ components:
       schema:
         type: integer
         format: int64
+    PerPage:
+      name: per_page
+      in: query
+      required: false
+      description: Number of records to return per page.
+      schema:
+        type: integer
+        default: 50
+        maximum: 100
   schemas:
     ServiceEntry:
       type: object
