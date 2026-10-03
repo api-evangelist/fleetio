@@ -137,13 +137,6 @@ components:
           format: date-time
           readOnly: true
   parameters:
-    StartCursor:
-      name: start_cursor
-      in: query
-      required: false
-      description: Cursor for cursor-based pagination of list results.
-      schema:
-        type: string
     PerPage:
       name: per_page
       in: query
@@ -161,6 +154,13 @@ components:
       schema:
         type: integer
         format: int64
+    StartCursor:
+      name: start_cursor
+      in: query
+      required: false
+      description: Cursor for cursor-based pagination of list results.
+      schema:
+        type: string
   securitySchemes:
     AuthorizationToken:
       type: apiKey

@@ -86,31 +86,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/WorkOrder'
 components:
-  parameters:
-    StartCursor:
-      name: start_cursor
-      in: query
-      required: false
-      description: Cursor for cursor-based pagination of list results.
-      schema:
-        type: string
-    PerPage:
-      name: per_page
-      in: query
-      required: false
-      description: Number of records to return per page.
-      schema:
-        type: integer
-        default: 50
-        maximum: 100
-    ResourceId:
-      name: id
-      in: path
-      required: true
-      description: The unique identifier of the resource.
-      schema:
-        type: integer
-        format: int64
   schemas:
     WorkOrder:
       type: object
@@ -160,6 +135,31 @@ components:
           type: string
           format: date-time
           readOnly: true
+  parameters:
+    PerPage:
+      name: per_page
+      in: query
+      required: false
+      description: Number of records to return per page.
+      schema:
+        type: integer
+        default: 50
+        maximum: 100
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: The unique identifier of the resource.
+      schema:
+        type: integer
+        format: int64
+    StartCursor:
+      name: start_cursor
+      in: query
+      required: false
+      description: Cursor for cursor-based pagination of list results.
+      schema:
+        type: string
   securitySchemes:
     AuthorizationToken:
       type: apiKey
