@@ -146,6 +146,13 @@ components:
         type: integer
         default: 50
         maximum: 100
+    StartCursor:
+      name: start_cursor
+      in: query
+      required: false
+      description: Cursor for cursor-based pagination of list results.
+      schema:
+        type: string
     ResourceId:
       name: id
       in: path
@@ -154,13 +161,6 @@ components:
       schema:
         type: integer
         format: int64
-    StartCursor:
-      name: start_cursor
-      in: query
-      required: false
-      description: Cursor for cursor-based pagination of list results.
-      schema:
-        type: string
   securitySchemes:
     AuthorizationToken:
       type: apiKey

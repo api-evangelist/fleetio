@@ -54,6 +54,30 @@ paths:
                   $ref: '#/components/schemas/SubmittedInspectionForm'
 components:
   schemas:
+    InspectionForm:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          readOnly: true
+        title:
+          type: string
+        description:
+          type: string
+        archived_at:
+          type:
+          - string
+          - 'null'
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
     SubmittedInspectionForm:
       type: object
       properties:
@@ -80,30 +104,6 @@ components:
         passed:
           type: boolean
         created_at:
-          type: string
-          format: date-time
-          readOnly: true
-    InspectionForm:
-      type: object
-      properties:
-        id:
-          type: integer
-          format: int64
-          readOnly: true
-        title:
-          type: string
-        description:
-          type: string
-        archived_at:
-          type:
-          - string
-          - 'null'
-          format: date-time
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        updated_at:
           type: string
           format: date-time
           readOnly: true
