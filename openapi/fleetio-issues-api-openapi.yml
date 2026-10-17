@@ -87,6 +87,14 @@ paths:
                 $ref: '#/components/schemas/Issue'
 components:
   parameters:
+    ResourceId:
+      name: id
+      in: path
+      required: true
+      description: The unique identifier of the resource.
+      schema:
+        type: integer
+        format: int64
     PerPage:
       name: per_page
       in: query
@@ -103,14 +111,6 @@ components:
       description: Cursor for cursor-based pagination of list results.
       schema:
         type: string
-    ResourceId:
-      name: id
-      in: path
-      required: true
-      description: The unique identifier of the resource.
-      schema:
-        type: integer
-        format: int64
   schemas:
     Issue:
       type: object
