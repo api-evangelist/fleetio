@@ -15,3 +15,46 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: fleetio-airbyte
+  label: Airbyte
+  partner: airbyte
+  partner_name: Airbyte
+  type: marketplace
+  marketplace: airbyte-registry
+  channel: elt-connector
+  evidence: https://docs.airbyte.com/integrations/sources/fleetio
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Airbyte connector registry (connectors.airbyte.com cloud_registry.json + oss_registry.json)
+    spec_file: null
+    role: elt-connector:airbyte-community
+    registered_name: Fleetio
+    matched_domain: fleetio.com
+    matched_by: domain
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    connectors:
+    - airbyte/source-fleetio
+    support_level:
+    - community
+    release_stage:
+    - alpha
+    in_cloud: true
+    builder: unknown (community connector; contributor not in the record)
+  status: pending-generation
+  arazzo: null
+- slug: fleetio-meltano-meltano-hub
+  label: Meltano (meltano-hub)
+  partner: meltano
+  partner_name: Meltano (meltano-hub)
+  category: data integration
+  type: marketplace
+  marketplace: meltano-hub
+  channel: partner-built
+  evidence: https://hub.meltano.com/extractors/tap-fleetio--fleetio
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
