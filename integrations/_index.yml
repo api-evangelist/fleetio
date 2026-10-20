@@ -15,6 +15,19 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: fleetio-meltano-meltano-hub
+  label: Meltano (meltano-hub)
+  partner: meltano
+  partner_name: Meltano (meltano-hub)
+  category: data integration
+  type: marketplace
+  marketplace: meltano-hub
+  channel: partner-built
+  evidence: https://hub.meltano.com/extractors/tap-fleetio--fleetio
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
 - slug: fleetio-airbyte
   label: Airbyte
   partner: airbyte
@@ -45,16 +58,33 @@
     builder: unknown (community connector; contributor not in the record)
   status: not-a-workflow
   arazzo: null
-- slug: fleetio-meltano-meltano-hub
-  label: Meltano (meltano-hub)
-  partner: meltano
-  partner_name: Meltano (meltano-hub)
-  category: data integration
-  type: marketplace
-  marketplace: meltano-hub
-  channel: partner-built
-  evidence: https://hub.meltano.com/extractors/tap-fleetio--fleetio
+- slug: fleetio-cloud-security-alliance-star-registry
+  label: Cloud Security Alliance STAR Registry
+  partner_name: Cloud Security Alliance STAR Registry
+  category: Cloud security assurance
+  type: register
+  channel: standard-directory
+  evidence: https://cloudsecurityalliance.org/star/registry/fleetio/services/fleetio
   source: edge
-  relationship: platform-app
+  relationship: standard-participant
+  contract_reference:
+    register: CSA STAR Registry (cloudsecurityalliance.org/star/registry)
+    spec_file: null
+    standard: CSA STAR
+    role: star-level-1
+    registered_name: Fleetio
+    registry_id: fleetio
+    service_url: https://secure.fleetio.com/
+    matched_domain: fleetio.com
+    matched_by: domain
+    identity_source: the service URL the organisation filed on its STAR listing (no lookup)
+    levels:
+    - STAR Level 1
+    certified_products: []
+    signal_note: STAR Level 1 (CAIQ self-assessment) = participation; certified_products = one entry per STAR Level
+      2 / STAR for AI Level 2 assessment TYPE (third-party certification, attestation, C-STAR, ValidAIted); lapsed
+      = every instance marked (Deprecated) by the registry; service counts never recorded
+    detected_by: sweep-compliance-assurance.py
+    detected: '2026-10-20'
   status: not-a-workflow
   arazzo: null
